@@ -16,11 +16,9 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets/"
-              }
+              "src/favicon.ico",
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/assets/css/nucleo-icons.css",
@@ -39,20 +37,20 @@
           },
           "configurations": {
             "production": {
-  "budgets": [
-    {
-      "type": "initial",
-      "maximumWarning": "2mb",
-      "maximumError": "5mb"
-    },
-    {
-      "type": "anyComponentStyle",
-      "maximumWarning": "20kb",
-      "maximumError": "40kb"
-    }
-  ],
-  "outputHashing": "all"
-},
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "20kb",
+                  "maximumError": "40kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
