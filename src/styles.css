@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.add-btn-square {
+  border-radius: 4px !important; /* coins presque carrés */
+  text-transform: none; /* garde le texte normal, pas en majuscules */
+  font-weight: 500;
+}
+.icon-only-btn {
+  width: 40px;           /* largeur fixe pour carré */
+  height: 40px;          /* hauteur fixe pour carré */
+  min-width: 0;          /* supprime la min-width Angular Material */
+  padding: 0;            /* supprime padding interne */
+  border-radius: 4px !important;    /* coins légèrement arrondis */
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* centre l’icône verticalement et horizontalement */
+}
+.custom-color {
+  background-color: #28a745!important; /* vert personnalisé, tu peux changer */
+  color: white;              /* couleur de l'icône */
+}
+
+.custom-color:hover {
+  background-color: #218838; /* couleur au survol */
+}

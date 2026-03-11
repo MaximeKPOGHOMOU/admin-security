@@ -18,11 +18,23 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/nucleo-svg.css",
+              "src/assets/css/material-dashboard.min2167.css",
+              "src/custom-theme.scss",
               "src/styles.css"
+            ],
+            "scripts": [
+              "src/assets/js/material-dashboard.min2167.js",
+              "src/assets/js/plugins/chartjs.min.js",
+              "src/assets/js/plugins/smooth-scrollbar.min.js",
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/core/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -81,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5e1807e1-1f17-4eee-a7d8-6b28477bd40d"
   }
 }

@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <!-- Sidebar -->
+  <app-sidebar 
+    [class.open]="mobileOpen" 
+    [mobileOpen]="mobileOpen" 
+    (closeSidebarEvent)="mobileOpen = false">
+  </app-sidebar>
+
+  <!-- Main content -->
+  <div class="main-panel">
+    <!-- Navbar -->
+    <app-navbar (toggleSidebarEvent)="toggleSidebar()"></app-navbar>
+
+    <!-- Page content -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+  </div>
+</div>

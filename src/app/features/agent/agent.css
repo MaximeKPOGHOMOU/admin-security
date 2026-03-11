@@ -1,0 +1,10 @@
+.header-row {
+    display: flex;               /* flex horizontal */
+    align-items: center;         /* centre verticalement */
+    justify-content: space-between; /* titre à gauche, bouton à droite */
+}
+
+.card {
+  border: none !important;      
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,96 @@
+/* ==========================
+   Layout global
+========================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* empêche le scroll global */
+}
+
+.wrapper {
+  min-height: 100vh;
+  overflow-x: hidden; /* pas de scroll horizontal */
+}
+
+/* ==========================
+   Sidebar (desktop)
+========================== */
+app-sidebar {
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  background-color: #fff; /* couleur de la sidebar */
+}
+
+/* ==========================
+   Main panel
+========================== */
+.main-panel {
+  margin-left: 220px;       /* espace pour la sidebar */
+  flex-direction: column;
+  height: 100vh;            /* prend toute la hauteur */
+  overflow-y: auto;         /* seul le main-panel scroll */
+  overflow-x: hidden;       /* pas de scroll horizontal */
+}
+
+/* ==========================
+   Content
+========================== */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   Footer
+========================== */
+app-footer {
+  flex-shrink: 0;
+  
+}
+
+/* ==========================
+   Responsive mobile
+========================== */
+@media (max-width: 768px) {
+
+  /* Sidebar mobile caché par défaut */
+  app-sidebar {
+    width: 250px;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2000;
+  }
+
+  app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Main panel full width sur mobile */
+  .main-panel {
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Hamburger à droite */
+  .navbar .navbar-nav {
+    justify-content: flex-end;
+  }
+}
+

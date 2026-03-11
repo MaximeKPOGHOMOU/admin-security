@@ -1,0 +1,89 @@
+/* =======================
+   Bordures gauches cartes
+   ======================= */
+
+/* Primary (bleu) */
+.border-left-primary {
+  border-left: 4px solid #1E88E5;
+  border-radius: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Success (vert) */
+.border-left-success {
+  border-left: 4px solid #43A047;
+  border-radius: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Warning (jaune) */
+.border-left-warning {
+  border-left: 4px solid #FDD835;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Info (cyan) */
+.border-left-info {
+  border-left: 4px solid #00ACC1;
+  border-radius: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Danger (rouge) */
+.border-left-danger {
+  border-left: 4px solid #E53935;
+  border-radius: 0.5rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+
+/* =======================
+   Background icône cartes
+   ======================= */
+
+/* Primary (bleu) */
+.bg-primary {
+  background-color: #1E88E5 !important;
+  border-radius: 0.5rem;
+}
+
+/* Success (vert) */
+.bg-success {
+  background-color: #43A047 !important;
+  border-radius: 0.5rem;
+}
+
+/* Warning (jaune) */
+.bg-warning {
+  background-color: #FDD835 !important;
+  border-radius: 0.5rem;
+}
+
+/* Info (cyan) */
+.bg-info {
+  background-color: #00ACC1 !important;
+  border-radius: 0.5rem;
+}
+
+/* Danger (rouge) */
+.bg-danger {
+  background-color: #E53935 !important;
+  border-radius: 0.5rem;
+}
+
+.card-border {
+  border: none !important;      
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
