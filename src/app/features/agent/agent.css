@@ -7,4 +7,37 @@
 .card {
   border: none !important;      
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
+
+ .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  .avatar img {
+    object-fit: cover;
+  }
+.card-agent {
+  border-top: 4px solid #0a0a0a !important;   /* bordure colorée en haut */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-agent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+  .btn i {
+    font-size: 1.2rem; /* taille de l'icône */
+    vertical-align: middle;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+
+  

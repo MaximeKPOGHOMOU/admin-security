@@ -1,6 +1,8 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AgentDialog } from '../../dialog/agent-dialog/agent-dialog';
 
 @Component({
   selector: 'app-agent',
@@ -14,17 +16,13 @@ export class Agent {
   selectedAgent?: Agent;
   showModal: boolean = false;
   
-  // ouvrir la boîte de dialogue
-  openAgentForm(agent?: Agent) {
-    this.selectedAgent = agent;
-    this.isEdit = !!agent;
-    this.showModal = true;
-  }
+  constructor(private dialog: MatDialog) {}
 
-  // fermer la boîte de dialogue
-  closeAgentForm() {
-    this.selectedAgent = undefined;
-    this.showModal = false;
-  }
+  openAddAgentDialog() {
+  this.dialog.open(AgentDialog, {
+    width: '500px',
+    disableClose: true
+  });
+}
 
 }
