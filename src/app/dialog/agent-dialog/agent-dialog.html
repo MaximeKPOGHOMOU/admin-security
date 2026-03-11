@@ -1,11 +1,11 @@
 <form class="p-4 p-md-5 bg-light shadow rounded" style="max-width: 700px; margin: auto; font-family: 'Segoe UI', sans-serif;">
-  <h2 class="mb-4 text-center text-primary">Ajouter un collaborateur</h2>
+  <h2 class="mb-4 text-center text-primary fw-bold">Ajouter un collaborateur</h2>
 
   <div class="row g-3">
     <!-- Nom -->
     <div class="col-md-6">
       <div class="form-floating">
-        <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Nom complet">
+        <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Nom complet" style="border-radius: 0.5rem;">
         <label for="nom">Nom complet</label>
       </div>
     </div>
@@ -13,7 +13,7 @@
     <!-- Email -->
     <div class="col-md-6">
       <div class="form-floating">
-        <input type="email" id="email" formControlName="email" class="form-control" placeholder="email@exemple.com">
+        <input type="email" id="email" formControlName="email" class="form-control" placeholder="email@exemple.com" style="border-radius: 0.5rem;">
         <label for="email">Email</label>
       </div>
     </div>
@@ -21,7 +21,7 @@
     <!-- Fonction -->
     <div class="col-md-6">
       <div class="form-floating">
-        <input type="text" id="fonction" formControlName="fonction" class="form-control" placeholder="Ex: Manager">
+        <input type="text" id="fonction" formControlName="fonction" class="form-control" placeholder="Ex: Manager" style="border-radius: 0.5rem;">
         <label for="fonction">Fonction</label>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <!-- Statut -->
     <div class="col-md-6">
       <div class="form-floating">
-        <select id="statut" formControlName="statut" class="form-select">
+        <select id="statut" formControlName="statut" class="form-select" style="border-radius: 0.5rem;">
           <option value="En ligne" selected>En ligne</option>
           <option value="Hors ligne">Hors ligne</option>
         </select>
@@ -40,15 +40,15 @@
     <!-- Date d'embauche -->
     <div class="col-md-6">
       <div class="form-floating">
-        <input type="date" id="dateEmbauche" formControlName="dateEmbauche" class="form-control" placeholder="Date d'embauche">
+        <input type="date" id="dateEmbauche" formControlName="dateEmbauche" class="form-control" placeholder="Date d'embauche" style="border-radius: 0.5rem;">
         <label for="dateEmbauche">Date d'embauche</label>
       </div>
     </div>
   </div>
 
   <!-- Boutons -->
-  <div class="d-flex justify-content-end gap-2 mt-4">
-    <button type="button" class="btn btn-outline-secondary fw-bold">Annuler</button>
-    <button type="submit" class="btn btn-primary fw-bold">Ajouter</button>
+  <div class="d-flex justify-content-end gap-3 mt-4">
+    <button type="button" class="btn btn-outline-secondary fw-bold" style="min-width: 120px;">Annuler</button>
+    <button type="submit" class="btn btn-primary fw-bold" style="min-width: 120px;">Ajouter</button>
   </div>
 </form>

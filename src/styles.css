@@ -30,3 +30,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .custom-color:hover {
   background-color: #218838; /* couleur au survol */
 }
+
+/* Champ de recherche */
+.search-input .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: #ced4da;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.search-input .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+  border-color: #0d6efd;
+}
+
+/* Partie fixe à droite */
+.search-input .search-tag {
+  background-color: #0d6efd;
+  color: #fff;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: default;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.6rem;
+  flex-shrink: 0; /* empêche la partie droite de se réduire */
+}
+
+/* Centrer l’icône verticalement */
+.search-input .search-tag i {
+  vertical-align: middle;
+}

@@ -1,10 +1,29 @@
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-    <div class="container-fluid py-2">
+    <div class="container-fluid">
         <div class="row">
-            <div class="header-row mb-4">
-                <h3 class="h4 mb-0 fw-bold">Gestion des agents</h3>
-                <button type="button" matTooltip="Ajouter un agent" class="btn btn-primary"
-                    (click)="openAddAgentDialog()"><i class="material-symbols-rounded">add</i></button>
+            <div class="header-row mb-4 d-flex flex-wrap align-items-center gap-1">
+                <!-- Titre -->
+                <h3 class="h4 mb-0 fw-bold flex-grow-1">Gestion des personnels</h3>
+
+                <!-- Champ de recherche avec section colorée fixe -->
+                <div class="input-group search-input" style="max-width: 250px;">
+                    <!-- Zone de saisie -->
+                    <input type="text" class="form-control" placeholder="Rechercher un agent..."
+                        style="padding: 8px 10px;">
+
+                    <!-- Partie fixe à droite -->
+                    <span class="input-group-text search-tag d-flex align-items-center">
+                        <i class="material-symbols-rounded me-1"
+                            style="font-size: 1.2rem; padding: 5px 0; color: white; width: 10px; ">search</i>
+                    </span>
+                </div>
+
+                <!-- Bouton Ajouter -->
+                <button type="button" matTooltip="Ajouter un agent"
+                    style="margin-top: 15px; border-radius: 5px; width: 20px; align-items: center; padding-right: 32px;"
+                    class="btn btn-primary" (click)="openAddAgentDialog()">
+                    <i class="material-symbols-rounded">add</i>
+                </button>
             </div>
             <div class="col-12">
                 <div class="card my-4">
@@ -12,7 +31,7 @@
                         <div
                             class="bg-gradient-dark shadow-dark border-radius-lg pt-3 pb-3 px-3 d-flex justify-content-between align-items-center">
                             <h6 class="text-white text-capitalize mb-0 fw-normal">
-                                Liste des agents
+                                Liste des personnels
                             </h6>
                         </div>
                     </div>
@@ -22,7 +41,7 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="card card-agent shadow-sm border-0 text-center p-2">
                                     <div class="avatar avatar-md mx-auto mb-2">
-                                        <img src="assets/img/team-2.jpg" alt="John Michael" class="rounded-circle w-75">
+                                        <img src="assets/img/team-1.jpg" alt="John Michael" class="rounded-circle w-100">
                                     </div>
                                     <h6 class="card-title mb-1">John Michael</h6>
                                     <p class="text-muted mb-1 text-xs">Manager - Organisation</p>
@@ -54,7 +73,123 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="card card-agent shadow-sm border-0 text-center p-2">
                                     <div class="avatar avatar-md mx-auto mb-2">
-                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-75">
+                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-100">
+                                    </div>
+                                    <h6 class="card-title mb-1">Jane Doe</h6>
+                                    <p class="text-muted mb-1 text-xs">Développeuse - IT</p>
+                                    <div class="text-center mb-2">
+                                        <span class="badge bg-warning">Hors ligne</span>
+                                    </div>
+                                    <p class="text-secondary mb-2 text-xs">Embauchée le 12/06/20</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <!-- Modifier (icône carré avec stylo) -->
+                                        <button type="button" matTooltip="Modifier"
+                                            style="background: none; border: none; color: #0d6efd; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">edit_square</i>
+                                        </button>
+
+                                        <!-- Voir (icône œil) -->
+                                        <button type="button" matTooltip="Voir"
+                                            style="background: none; border: none; color: #11ad0c; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">visibility</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carte 2 -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="card card-agent shadow-sm border-0 text-center p-2">
+                                    <div class="avatar avatar-md mx-auto mb-2">
+                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-100">
+                                    </div>
+                                    <h6 class="card-title mb-1">Jane Doe</h6>
+                                    <p class="text-muted mb-1 text-xs">Développeuse - IT</p>
+                                    <div class="text-center mb-2">
+                                        <span class="badge bg-warning">Hors ligne</span>
+                                    </div>
+                                    <p class="text-secondary mb-2 text-xs">Embauchée le 12/06/20</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <!-- Modifier (icône carré avec stylo) -->
+                                        <button type="button" matTooltip="Modifier"
+                                            style="background: none; border: none; color: #0d6efd; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">edit_square</i>
+                                        </button>
+
+                                        <!-- Voir (icône œil) -->
+                                        <button type="button" matTooltip="Voir"
+                                            style="background: none; border: none; color: #11ad0c; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">visibility</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carte 2 -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="card card-agent shadow-sm border-0 text-center p-2">
+                                    <div class="avatar avatar-md mx-auto mb-2">
+                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-100">
+                                    </div>
+                                    <h6 class="card-title mb-1">Jane Doe</h6>
+                                    <p class="text-muted mb-1 text-xs">Développeuse - IT</p>
+                                    <div class="text-center mb-2">
+                                        <span class="badge bg-warning">Hors ligne</span>
+                                    </div>
+                                    <p class="text-secondary mb-2 text-xs">Embauchée le 12/06/20</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <!-- Modifier (icône carré avec stylo) -->
+                                        <button type="button" matTooltip="Modifier"
+                                            style="background: none; border: none; color: #0d6efd; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">edit_square</i>
+                                        </button>
+
+                                        <!-- Voir (icône œil) -->
+                                        <button type="button" matTooltip="Voir"
+                                            style="background: none; border: none; color: #11ad0c; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">visibility</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carte 2 -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="card card-agent shadow-sm border-0 text-center p-2">
+                                    <div class="avatar avatar-md mx-auto mb-2">
+                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-100">
+                                    </div>
+                                    <h6 class="card-title mb-1">Jane Doe</h6>
+                                    <p class="text-muted mb-1 text-xs">Développeuse - IT</p>
+                                    <div class="text-center mb-2">
+                                        <span class="badge bg-warning">Hors ligne</span>
+                                    </div>
+                                    <p class="text-secondary mb-2 text-xs">Embauchée le 12/06/20</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <!-- Modifier (icône carré avec stylo) -->
+                                        <button type="button" matTooltip="Modifier"
+                                            style="background: none; border: none; color: #0d6efd; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">edit_square</i>
+                                        </button>
+
+                                        <!-- Voir (icône œil) -->
+                                        <button type="button" matTooltip="Voir"
+                                            style="background: none; border: none; color: #11ad0c; padding: 0; cursor: pointer;">
+                                            <i class="material-symbols-rounded"
+                                                style="font-size: 1.5rem;">visibility</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carte 2 -->
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="card card-agent shadow-sm border-0 text-center p-2">
+                                    <div class="avatar avatar-md mx-auto mb-2">
+                                        <img src="assets/img/team-1.jpg" alt="Jane Doe" class="rounded-circle w-100">
                                     </div>
                                     <h6 class="card-title mb-1">Jane Doe</h6>
                                     <p class="text-muted mb-1 text-xs">Développeuse - IT</p>
@@ -84,7 +219,7 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="card card-agent shadow-sm border-0 text-center p-2">
                                     <div class="avatar avatar-md mx-auto mb-2">
-                                        <img src="assets/img/team-3.jpg" alt="Alice Smith" class="rounded-circle w-75">
+                                        <img src="assets/img/team-3.jpg" alt="Alice Smith" class="rounded-circle w-100">
                                     </div>
                                     <h6 class="card-title mb-1">Alice Smith</h6>
                                     <p class="text-muted mb-1 text-xs">RH - Ressources</p>
@@ -113,7 +248,7 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="card card-agent shadow-sm text-center p-2">
                                     <div class="avatar avatar-md mx-auto mb-2">
-                                        <img src="assets/img/team-4.jpg" alt="Bob Johnson" class="rounded-circle w-75">
+                                        <img src="assets/img/team-4.jpg" alt="Bob Johnson" class="rounded-circle w-100">
                                     </div>
                                     <h6 class="card-title mb-1">Bob Johnson</h6>
                                     <p class="text-muted mb-1 text-xs">Support - IT</p>
@@ -139,6 +274,40 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <!-- Conteneur des cartes -->
+                    <div class="container py-4">
+                        <div class="row g-3">
+                            <!-- Tes cartes ici (comme tu as déjà) -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <!-- Pagination stylée avec icônes -->
+                        <nav aria-label="Page navigation example" class="mt-4">
+                            <ul class="pagination justify-content-center align-items-center gap-2">
+                                <!-- Bouton précédent -->
+                                <li class="page-item">
+                                    <a class="page-link d-flex align-items-center justify-content-center" href="#"
+                                        aria-label="Précédent" style="width: 40px; height: 40px; border-radius: 50%;">
+                                        <i class="material-symbols-rounded" style="font-size: 1.5rem;">chevron_left</i>
+                                    </a>
+                                </li>
+
+                                <!-- Numéros de page -->
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <!-- Bouton suivant -->
+                                <li class="page-item">
+                                    <a class="page-link d-flex align-items-center justify-content-center" href="#"
+                                        aria-label="Suivant" style="width: 40px; height: 40px; border-radius: 50%;">
+                                        <i class="material-symbols-rounded" style="font-size: 1.5rem;">chevron_right</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
