@@ -83,10 +83,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .form-header h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: white;
-  font-size: 21px;
 }
 .form-header p {
   margin: 2px 0 10px;
@@ -150,13 +149,62 @@ mat-form-field {
   font-size: 14px;
 }
 
-/* Responsive mobile */
+/* Grid formulaire : PC 2 colonnes, mobile 1 colonne */
+.form-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 par ligne */
+  gap: 8px 12px;
+  padding: 20px;
+}
+
+/* Full width pour description et upload */
+.full-width {
+  grid-column: span 2 !important;
+}
+
+/* Champ Angular Material */
+mat-form-field {
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Input interne */
+.mat-mdc-form-field-flex {
+  flex-direction: column !important;
+}
+
+/* Upload container */
+.file-upload .upload-container {
+  display: flex !important;
+  width: 100% !important;
+  height: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Responsive mobile : 1 champ par ligne */
 @media (max-width: 768px) {
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important; /* 1 par ligne */
   }
   .full-width {
-    grid-column: span 1;
+    grid-column: span 1 !important;
+  }
+  mat-form-field {
+    width: 100% !important;
+  }
+  .file-upload .upload-container {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .upload-button, .upload-filename {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 6px 10px !important;
+  }
+  .upload-filename {
+    margin-top: 4px !important;
   }
 }
 

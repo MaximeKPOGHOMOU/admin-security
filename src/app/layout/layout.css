@@ -24,7 +24,7 @@ app-sidebar {
   height: 100vh;
   z-index: 1000;
   transition: transform 0.3s ease;
-  background-color: #fff; /* couleur de la sidebar */
+
 }
 
 /* ==========================
