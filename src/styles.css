@@ -1,37 +1,9 @@
 /* Reset de base */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-/* Table responsive */
-.table-responsive {
-  overflow-x: auto;
-  width: 100%;
-}
-
-/* Boutons carrés ou icônes */
-.add-btn-square {
-  border-radius: 4px !important;
-  text-transform: none;
-  font-weight: 500;
-}
-
-.icon-only-btn {
-  width: 40px;
-  height: 40px;
-  min-width: 0;
-  padding: 0;
-  border-radius: 4px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.custom-color {
-  background-color: #28a745 !important;
-  color: white;
-}
-.custom-color:hover {
-  background-color: #218838;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* Champ de recherche */
@@ -39,12 +11,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-color: #ced4da;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 .search-input .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, .25);
   border-color: #0d6efd;
 }
+
 .search-input .search-tag {
   background-color: #0d6efd;
   color: #fff;
@@ -55,6 +29,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 0.35rem 0.6rem;
   flex-shrink: 0;
 }
+
 .search-input .search-tag i {
   vertical-align: middle;
 }
@@ -71,7 +46,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   max-width: 100%;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
@@ -80,36 +55,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: white;
   padding: 10px;
   text-align: center;
+  margin-bottom: 20px;
 }
+
 .form-header h2 {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
   color: white;
 }
+
+.card-header .bg-gradient-dark {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .form-header p {
   margin: 2px 0 10px;
   color: #eee;
   font-size: 12px;
 }
 
-/* Grid formulaire */
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px 8px;
-  padding: 20px;
+/* Form rows : flex pour 2 champs */
+.form-row {
+  display: flex;
+  gap: 5px;
+  /* espace horizontal */
+  flex-wrap: wrap;
+  padding: 5px 10px;
 }
 
-/* Champs prennent toute la largeur */
-mat-form-field {
+/* Chaque champ dans la row prend environ 50% */
+.form-row mat-form-field {
+  flex: 1 1 45%;
   width: 100%;
-  margin-bottom: 0;
 }
 
-/* Champ description plein largeur */
+/* Champs full-width (upload, textarea) */
 .full-width {
-  grid-column: span 2;
+  flex: 1 1 100%;
+  width: 100%;
 }
 
 /* Boutons alignés à droite */
@@ -118,23 +103,14 @@ mat-form-field {
   justify-content: flex-end;
   gap: 10px;
   margin-top: 15px;
-  grid-column: span 2;
+  margin-right: 10px;
 }
 
-/* Grid formulaire avec moins d'espace vertical */
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 6px;     /* espace vertical réduit */
-  column-gap: 12px; /* espace horizontal */
-  padding: 20px;
-}
-
-/* Supprime les marges internes de mat-form-field */
+/* Supprime marges internes des mat-form-field */
 mat-form-field {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
   width: 100%;
-  margin-bottom: 0 !important;        /* supprime le margin par défaut */
-  padding-bottom: 0 !important;       /* supprime le padding interne */
 }
 
 /* Supprime l'espace sous les hints / erreurs */
@@ -149,76 +125,8 @@ mat-form-field {
   font-size: 14px;
 }
 
-/* Grid formulaire : PC 2 colonnes, mobile 1 colonne */
-.form-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important; /* 2 par ligne */
-  gap: 8px 12px;
-  padding: 20px;
-}
-
-/* Full width pour description et upload */
-.full-width {
-  grid-column: span 2 !important;
-}
-
-/* Champ Angular Material */
-mat-form-field {
-  width: 100% !important;
-  margin-bottom: 0 !important;
-}
-
-/* Input interne */
-.mat-mdc-form-field-flex {
-  flex-direction: column !important;
-}
-
-/* Upload container */
+/* Upload file container */
 .file-upload .upload-container {
-  display: flex !important;
-  width: 100% !important;
-  height: 40px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* Responsive mobile : 1 champ par ligne */
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr !important; /* 1 par ligne */
-  }
-  .full-width {
-    grid-column: span 1 !important;
-  }
-  mat-form-field {
-    width: 100% !important;
-  }
-  .file-upload .upload-container {
-    flex-direction: column !important;
-    height: auto !important;
-  }
-  .upload-button, .upload-filename {
-    width: 100% !important;
-    justify-content: flex-start !important;
-    padding: 6px 10px !important;
-  }
-  .upload-filename {
-    margin-top: 4px !important;
-  }
-}
-
-/* Label au-dessus */
-.file-upload .upload-label {
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: #555;
-  display: block;
-}
-
-/* Container du champ */
-.upload-container {
   display: flex;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -264,38 +172,43 @@ mat-form-field {
 .upload-button:hover {
   background-color: #0b5ed7;
 }
-.card-header .bg-gradient-dark {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  margin-top: 0;
-}
-/* Grid formulaire : 2 colonnes par défaut */
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 champs par ligne */
-  row-gap: 6px;
-  column-gap: 12px;
-  padding: 20px;
+
+/* Label au-dessus */
+.file-upload .upload-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #555;
+  display: block;
 }
 
-/* Champs full-width (description, upload) */
-.full-width {
-  grid-column: span 2;
-}
-
-/* Supprimer marges / padding internes de mat-form-field */
-mat-form-field {
-  width: 100%;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Responsive mobile : 1 champ par ligne */
+/* Responsive mobile */
 @media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr; /* un champ par ligne sur mobile */
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
   }
-  .full-width {
-    grid-column: span 1; /* prend toute la largeur */
+
+  .form-row mat-form-field {
+    flex: 1 1 100%;
+    /* chaque champ prend toute la largeur */
+  }
+
+  /* Upload vertical sur mobile */
+  .file-upload .upload-container {
+
+    height: auto;
+  }
+
+  .upload-button,
+  .upload-filename {
+    width: 50%;
+    justify-content: flex-start;
+    padding: 6px 10px;
+  }
+
+  .upload-filename {
+    margin-top: 4px;
   }
 }

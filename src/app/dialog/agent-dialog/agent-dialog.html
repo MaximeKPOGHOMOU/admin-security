@@ -7,82 +7,96 @@
   </div>
 
   <div class="form-grid">
-    <!-- Nom -->
-    <mat-form-field>
-      <mat-label>Nom</mat-label>
-      <input matInput placeholder="Nom complet">
-    </mat-form-field>
 
-    <!-- Prénom -->
-    <mat-form-field>
-      <mat-label>Prénom</mat-label>
-      <input matInput placeholder="Prénom">
-    </mat-form-field>
+    <!-- Prenom + Nom -->
+    <div class="form-row">
+      <!-- Nom -->
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom complet">
+      </mat-form-field>
 
-    <!-- Email -->
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="email@exemple.com">
-    </mat-form-field>
+      <!-- Prénom -->
+      <mat-form-field>
+        <mat-label>Prénom</mat-label>
+        <input matInput placeholder="Prénom">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <!-- Email -->
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="email@exemple.com">
+      </mat-form-field>
 
-    <!-- Téléphone -->
-    <mat-form-field>
-      <mat-label>Téléphone</mat-label>
-      <input matInput placeholder="+224 000 000 000">
-    </mat-form-field>
+      <!-- Téléphone -->
+      <mat-form-field>
+        <mat-label>Téléphone</mat-label>
+        <input matInput placeholder="+224 000 000 000">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
 
-    <!-- Fonction -->
-    <mat-form-field>
-      <mat-label>Fonction</mat-label>
-      <input matInput placeholder="Fonction">
-    </mat-form-field>
 
-    <!-- Département -->
-    <mat-form-field>
-      <mat-label>Département</mat-label>
-      <input matInput placeholder="Ex: IT, RH">
-    </mat-form-field>
+      <!-- Fonction -->
+      <mat-form-field>
+        <mat-label>Fonction</mat-label>
+        <input matInput placeholder="Fonction">
+      </mat-form-field>
 
-    <!-- Statut -->
-    <mat-form-field>
-      <mat-label>Statut</mat-label>
-      <mat-select>
-        <mat-option value="enligne">En ligne</mat-option>
-        <mat-option value="horsligne">Hors ligne</mat-option>
-      </mat-select>
-    </mat-form-field>
+      <!-- Département -->
+      <mat-form-field>
+        <mat-label>Département</mat-label>
+        <input matInput placeholder="Ex: IT, RH">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
 
-    <!-- Date d'embauche -->
-    <mat-form-field>
-      <mat-label>Date d'embauche</mat-label>
-      <input matInput type="date">
-    </mat-form-field>
 
-    <!-- Upload image / fichier -->
-    <div class="file-upload full-width">
-      <div class="upload-container">
-        <!-- Partie gauche : bouton bleu -->
-        <div class="upload-button" (click)="fileInput.click()">
-          <i class="material-symbols-rounded">upload_file</i>
-          <span>Choisir un fichier</span>
+      <!-- Statut -->
+      <mat-form-field>
+        <mat-label>Statut</mat-label>
+        <mat-select>
+          <mat-option value="enligne">En ligne</mat-option>
+          <mat-option value="horsligne">Hors ligne</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Date d'embauche -->
+      <mat-form-field>
+        <mat-label>Date d'embauche</mat-label>
+        <input matInput type="date">
+      </mat-form-field>
+      <!-- Upload image / fichier -->
+      <div class="file-upload full-width">
+        <div class="upload-container">
+          <!-- Partie gauche : bouton bleu -->
+          <div class="upload-button" (click)="fileInput.click()">
+            <i class="material-symbols-rounded">upload_file</i>
+            <span>Choisir un fichier</span>
+          </div>
+  
+          <!-- Partie droite : affichage du fichier -->
+          <div class="upload-filename">
+            {{ selectedFileName || 'Aucun fichier selectionner' }}
+          </div>
+  
+          <!-- Input type file caché -->
+          <input type="file" #fileInput hidden (change)="onFileSelected($event)">
         </div>
-
-        <!-- Partie droite : affichage du fichier -->
-        <div class="upload-filename">
-          {{ selectedFileName || 'Aucun fichier choisi' }}
-        </div>
-
-        <!-- Input type file caché -->
-        <input type="file" #fileInput hidden (change)="onFileSelected($event)">
       </div>
     </div>
+    
+        <!-- Boutons -->
+        <div class="form-actions"> <!-- Bouton Ajouter --> <button type="button" matTooltip="Ajouter un agent"
+            class="btn btn-primary" (click)="closeDialog()"> Annuler </button> <button type="button"
+            matTooltip="Ajouter un agent" class="btn bg-gradient-success"> Ajouter </button> </div>
+      </div>
 
 
 
-    <!-- Boutons -->
-    <div class="form-actions"> <!-- Bouton Ajouter --> <button type="button" matTooltip="Ajouter un agent"
-        class="btn btn-primary" (click)="closeDialog()"> Annuler </button> <button type="button"
-        matTooltip="Ajouter un agent" class="btn bg-gradient-success"> Ajouter </button> </div>
-  </div>
+
+
+
 
 </form>
