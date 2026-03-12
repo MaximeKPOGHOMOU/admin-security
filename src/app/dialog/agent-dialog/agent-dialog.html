@@ -1,54 +1,88 @@
-<form class="p-4 p-md-5 bg-light shadow rounded" style="max-width: 700px; margin: auto; font-family: 'Segoe UI', sans-serif;">
-  <h2 class="mb-4 text-center text-primary fw-bold">Ajouter un collaborateur</h2>
+<form class="form-container">
 
-  <div class="row g-3">
+  <!-- En-tête coloré -->
+  <div class="form-header bg-gradient-dark shadow-dark">
+    <h2>Ajouter un collaborateur</h2>
+    <p>Renseignez les informations du personnel</p>
+  </div>
+
+  <div class="form-grid">
     <!-- Nom -->
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" id="nom" formControlName="nom" class="form-control" placeholder="Nom complet" style="border-radius: 0.5rem;">
-        <label for="nom">Nom complet</label>
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Nom complet">
+    </mat-form-field>
+
+    <!-- Prénom -->
+    <mat-form-field>
+      <mat-label>Prénom</mat-label>
+      <input matInput placeholder="Prénom">
+    </mat-form-field>
 
     <!-- Email -->
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="email" id="email" formControlName="email" class="form-control" placeholder="email@exemple.com" style="border-radius: 0.5rem;">
-        <label for="email">Email</label>
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@exemple.com">
+    </mat-form-field>
+
+    <!-- Téléphone -->
+    <mat-form-field>
+      <mat-label>Téléphone</mat-label>
+      <input matInput placeholder="+224 000 000 000">
+    </mat-form-field>
 
     <!-- Fonction -->
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" id="fonction" formControlName="fonction" class="form-control" placeholder="Ex: Manager" style="border-radius: 0.5rem;">
-        <label for="fonction">Fonction</label>
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>Fonction</mat-label>
+      <input matInput placeholder="Fonction">
+    </mat-form-field>
+
+    <!-- Département -->
+    <mat-form-field>
+      <mat-label>Département</mat-label>
+      <input matInput placeholder="Ex: IT, RH">
+    </mat-form-field>
 
     <!-- Statut -->
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select id="statut" formControlName="statut" class="form-select" style="border-radius: 0.5rem;">
-          <option value="En ligne" selected>En ligne</option>
-          <option value="Hors ligne">Hors ligne</option>
-        </select>
-        <label for="statut">Statut</label>
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>Statut</mat-label>
+      <mat-select>
+        <mat-option value="enligne">En ligne</mat-option>
+        <mat-option value="horsligne">Hors ligne</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <!-- Date d'embauche -->
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="date" id="dateEmbauche" formControlName="dateEmbauche" class="form-control" placeholder="Date d'embauche" style="border-radius: 0.5rem;">
-        <label for="dateEmbauche">Date d'embauche</label>
+    <mat-form-field>
+      <mat-label>Date d'embauche</mat-label>
+      <input matInput type="date">
+    </mat-form-field>
+
+    <!-- Upload image / fichier -->
+    <div class="file-upload full-width">
+      <div class="upload-container">
+        <!-- Partie gauche : bouton bleu -->
+        <div class="upload-button" (click)="fileInput.click()">
+          <i class="material-symbols-rounded">upload_file</i>
+          <span>Choisir un fichier</span>
+        </div>
+
+        <!-- Partie droite : affichage du fichier -->
+        <div class="upload-filename">
+          {{ selectedFileName || 'Aucun fichier choisi' }}
+        </div>
+
+        <!-- Input type file caché -->
+        <input type="file" #fileInput hidden (change)="onFileSelected($event)">
       </div>
     </div>
+
+
+
+    <!-- Boutons -->
+    <div class="form-actions"> <!-- Bouton Ajouter --> <button type="button" matTooltip="Ajouter un agent"
+        class="btn btn-primary" (click)="closeDialog()"> Annuler </button> <button type="button"
+        matTooltip="Ajouter un agent" class="btn bg-gradient-success"> Ajouter </button> </div>
   </div>
 
-  <!-- Boutons -->
-  <div class="d-flex justify-content-end gap-3 mt-4">
-    <button type="button" class="btn btn-outline-secondary fw-bold" style="min-width: 120px;">Annuler</button>
-    <button type="submit" class="btn btn-primary fw-bold" style="min-width: 120px;">Ajouter</button>
-  </div>
 </form>

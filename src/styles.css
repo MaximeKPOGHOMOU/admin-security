@@ -1,34 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Reset de base */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Table responsive */
 .table-responsive {
   overflow-x: auto;
   width: 100%;
 }
 
+/* Boutons carrés ou icônes */
 .add-btn-square {
-  border-radius: 4px !important; /* coins presque carrés */
-  text-transform: none; /* garde le texte normal, pas en majuscules */
+  border-radius: 4px !important;
+  text-transform: none;
   font-weight: 500;
 }
+
 .icon-only-btn {
-  width: 40px;           /* largeur fixe pour carré */
-  height: 40px;          /* hauteur fixe pour carré */
-  min-width: 0;          /* supprime la min-width Angular Material */
-  padding: 0;            /* supprime padding interne */
-  border-radius: 4px !important;    /* coins légèrement arrondis */
+  width: 40px;
+  height: 40px;
+  min-width: 0;
+  padding: 0;
+  border-radius: 4px !important;
   display: flex;
   justify-content: center;
-  align-items: center;   /* centre l’icône verticalement et horizontalement */
-}
-.custom-color {
-  background-color: #28a745!important; /* vert personnalisé, tu peux changer */
-  color: white;              /* couleur de l'icône */
+  align-items: center;
 }
 
+.custom-color {
+  background-color: #28a745 !important;
+  color: white;
+}
 .custom-color:hover {
-  background-color: #218838; /* couleur au survol */
+  background-color: #218838;
 }
 
 /* Champ de recherche */
@@ -38,13 +41,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-color: #ced4da;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
 .search-input .form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
   border-color: #0d6efd;
 }
-
-/* Partie fixe à droite */
 .search-input .search-tag {
   background-color: #0d6efd;
   color: #fff;
@@ -53,10 +53,201 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: default;
   font-size: 0.9rem;
   padding: 0.35rem 0.6rem;
-  flex-shrink: 0; /* empêche la partie droite de se réduire */
+  flex-shrink: 0;
 }
-
-/* Centrer l’icône verticalement */
 .search-input .search-tag i {
   vertical-align: middle;
+}
+
+/* Dialog global */
+.mat-mdc-dialog-container,
+.mdc-dialog__surface,
+.mat-mdc-dialog-surface {
+  border-radius: 5px !important;
+}
+
+/* Formulaire principal */
+.form-container {
+  max-width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* En-tête colorée */
+.form-header {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.form-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-size: 21px;
+}
+.form-header p {
+  margin: 2px 0 10px;
+  color: #eee;
+  font-size: 12px;
+}
+
+/* Grid formulaire */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 8px;
+  padding: 20px;
+}
+
+/* Champs prennent toute la largeur */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Champ description plein largeur */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Boutons alignés à droite */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  grid-column: span 2;
+}
+
+/* Grid formulaire avec moins d'espace vertical */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 6px;     /* espace vertical réduit */
+  column-gap: 12px; /* espace horizontal */
+  padding: 20px;
+}
+
+/* Supprime les marges internes de mat-form-field */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0 !important;        /* supprime le margin par défaut */
+  padding-bottom: 0 !important;       /* supprime le padding interne */
+}
+
+/* Supprime l'espace sous les hints / erreurs */
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+/* Réduit la hauteur des inputs */
+.mat-mdc-input-element {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 14px;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+}
+
+/* Label au-dessus */
+.file-upload .upload-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #555;
+  display: block;
+}
+
+/* Container du champ */
+.upload-container {
+  display: flex;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+}
+
+/* Partie gauche : bouton bleu */
+.upload-button {
+  background-color: #0d6efd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  gap: 4px;
+  font-size: 14px;
+}
+
+/* Partie droite : affichage du fichier */
+.upload-filename {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Icône dans le bouton */
+.upload-button i {
+  font-size: 18px;
+}
+
+/* Hover pour le bouton */
+.upload-button:hover {
+  background-color: #0b5ed7;
+}
+.card-header .bg-gradient-dark {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: 0;
+}
+/* Grid formulaire : 2 colonnes par défaut */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 champs par ligne */
+  row-gap: 6px;
+  column-gap: 12px;
+  padding: 20px;
+}
+
+/* Champs full-width (description, upload) */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Supprimer marges / padding internes de mat-form-field */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Responsive mobile : 1 champ par ligne */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* un champ par ligne sur mobile */
+  }
+  .full-width {
+    grid-column: span 1; /* prend toute la largeur */
+  }
 }

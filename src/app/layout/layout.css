@@ -31,7 +31,7 @@ app-sidebar {
    Main panel
 ========================== */
 .main-panel {
-  margin-left: 220px;       /* espace pour la sidebar */
+  margin-left: 230px;       /* espace pour la sidebar */
   flex-direction: column;
   height: 100vh;            /* prend toute la hauteur */
   overflow-y: auto;         /* seul le main-panel scroll */
