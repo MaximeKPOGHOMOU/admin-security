@@ -15,5 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrl: './login.css',
 })
 export class Login {
+showPassword = false;
 
+togglePassword(){
+  this.showPassword = !this.showPassword;
+}
 }
