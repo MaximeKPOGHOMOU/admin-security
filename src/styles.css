@@ -270,6 +270,19 @@ mat-form-field {
     justify-content: flex-start; 
     gap: 5px;
   }
+
+
+  .form-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 10px;      /* espace à gauche et à droite */
+    margin-right: 0;      /* annule ton margin-right:10px */
+  }
+
+  .form-actions button {
+    flex: 1;              /* même largeur */
+  }
 }
 
 
@@ -319,3 +332,81 @@ mat-form-field {
   font-weight: 500;
 }
 
+.agent-table th{
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8392ab;
+}
+
+.agent-table td{
+  vertical-align: middle;
+  
+}
+
+.avatar-table{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.btn-icon{
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:4px;
+}
+
+.btn-icon i{
+  font-size:20px;
+}
+
+.btn-icon:hover{
+  transform:scale(1.1);
+}
+
+.agent-table td:first-child{
+  font-weight:600;
+  color:#8392ab;
+}
+.agent-table th,
+.agent-table td{
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+
+.page-link {
+  color: #0d6efd; /* bleu */
+}
+.page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+  
+/* Limiter la hauteur de la table et activer le scroll */
+.table-responsive {
+  max-height: 400px; /* limite la hauteur, tu peux ajuster */
+  overflow-y: auto;
+}
+
+/* Fixe l'entête pour rester visible lors du scroll */
+.agent-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Optionnel : ajouter un léger shadow quand on scroll */
+.table-responsive::-webkit-scrollbar {
+  width: 0;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}

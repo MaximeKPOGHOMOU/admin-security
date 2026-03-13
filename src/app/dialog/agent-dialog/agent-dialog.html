@@ -38,16 +38,16 @@
       </div>
     </div>
 
-<!-- Ligne 4 : Adresse + Date de naissance -->
-<div class="form-row">
-  <div class="input-icon">
-    <input type="text" placeholder="Adresse">
-  </div>
-  <div class="input-icon date-icon">
-    <input type="date" placeholder="Date de naissance">
+    <!-- Ligne 4 : Adresse + Date de naissance -->
+    <div class="form-row">
+      <div class="input-icon">
+        <input type="text" placeholder="Adresse">
+      </div>
+      <div class="input-icon date-icon">
+        <input type="date" placeholder="Date de naissance">
 
-  </div>
-</div>
+      </div>
+    </div>
 
     <!-- Ligne 5 : Sexe + Type de contrat -->
     <div class="form-row">
@@ -69,18 +69,18 @@
     </div>
 
     <div class="form-row">
-   <!-- Upload photo -->
-<div class="file-upload" style="flex: 1;">
-  <div class="upload-container">
-    <div class="upload-button bg-gradient-info" (click)="photoInput.click()">
-      <i class="material-symbols-rounded">upload_file</i>
-    </div>
-    <div class="upload-filename">
-      <span>{{ selectedPhotoName || 'Sélectionné la photo' }}</span>
-    </div>
-    <input type="file" #photoInput hidden (change)="onPhotoSelected($event)">
-  </div>
-</div>
+      <!-- Upload photo -->
+      <div class="file-upload" style="flex: 1;">
+        <div class="upload-container">
+          <div class="upload-button bg-gradient-info" (click)="photoInput.click()">
+            <i class="material-symbols-rounded">upload_file</i>
+          </div>
+          <div class="upload-filename">
+            <span>{{ selectedPhotoName || 'Sélectionné la photo' }}</span>
+          </div>
+          <input type="file" #photoInput hidden (change)="onPhotoSelected($event)">
+        </div>
+      </div>
       <!-- Upload pièce -->
       <div class="file-upload" style="flex: 1; ">
         <div class="upload-container">
