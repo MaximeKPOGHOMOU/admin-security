@@ -8,95 +8,99 @@
 
   <div class="form-grid">
 
-    <!-- Prenom + Nom -->
+    <!-- Ligne 1 : Nom + Prénom -->
     <div class="form-row">
-      <!-- Nom -->
-      <mat-form-field>
-        <mat-label>Nom</mat-label>
-        <input matInput placeholder="Nom complet">
-      </mat-form-field>
-
-      <!-- Prénom -->
-      <mat-form-field>
-        <mat-label>Prénom</mat-label>
-        <input matInput placeholder="Prénom">
-      </mat-form-field>
+      <div class="input-icon">
+        <input type="text" placeholder="Nom">
+      </div>
+      <div class="input-icon">
+        <input type="text" placeholder="Prénom">
+      </div>
     </div>
-    <div class="form-row">
-      <!-- Email -->
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="email@exemple.com">
-      </mat-form-field>
 
-      <!-- Téléphone -->
-      <mat-form-field>
-        <mat-label>Téléphone</mat-label>
-        <input matInput placeholder="+224 000 000 000">
-      </mat-form-field>
+    <!-- Ligne 2 : Email + Téléphone -->
+    <div class="form-row">
+      <div class="input-icon">
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="input-icon">
+        <input type="text" placeholder="Téléphone">
+      </div>
     </div>
+
+    <!-- Ligne 3 : Poste + Département -->
     <div class="form-row">
-
-
-      <!-- Fonction -->
-      <mat-form-field>
-        <mat-label>Fonction</mat-label>
-        <input matInput placeholder="Fonction">
-      </mat-form-field>
-
-      <!-- Département -->
-      <mat-form-field>
-        <mat-label>Département</mat-label>
-        <input matInput placeholder="Ex: IT, RH">
-      </mat-form-field>
+      <div class="input-icon">
+        <input type="text" placeholder="Poste">
+      </div>
+      <div class="input-icon">
+        <input type="text" placeholder="Département / Service">
+      </div>
     </div>
+
+<!-- Ligne 4 : Adresse + Date de naissance -->
+<div class="form-row">
+  <div class="input-icon">
+    <input type="text" placeholder="Adresse">
+  </div>
+  <div class="input-icon date-icon">
+    <input type="date" placeholder="Date de naissance">
+
+  </div>
+</div>
+
+    <!-- Ligne 5 : Sexe + Type de contrat -->
     <div class="form-row">
+      <div class="input-icon">
+        <select>
+          <option value="" disabled selected>Sexe</option>
+          <option value="M">Masculin</option>
+          <option value="F">Féminin</option>
+        </select>
+      </div>
+      <div class="input-icon">
+        <select>
+          <option value="" disabled selected>Type de contrat</option>
+          <option value="CDI">CDI</option>
+          <option value="CDD">CDD</option>
+          <option value="Temporaire">Temporaire</option>
+        </select>
+      </div>
+    </div>
 
-
-      <!-- Statut -->
-      <mat-form-field>
-        <mat-label>Statut</mat-label>
-        <mat-select>
-          <mat-option value="enligne">En ligne</mat-option>
-          <mat-option value="horsligne">Hors ligne</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <!-- Date d'embauche -->
-      <mat-form-field>
-        <mat-label>Date d'embauche</mat-label>
-        <input matInput type="date">
-      </mat-form-field>
-      <!-- Upload image / fichier -->
-      <div class="file-upload full-width">
+    <div class="form-row">
+   <!-- Upload photo -->
+<div class="file-upload" style="flex: 1;">
+  <div class="upload-container">
+    <div class="upload-button bg-gradient-info" (click)="photoInput.click()">
+      <i class="material-symbols-rounded">upload_file</i>
+    </div>
+    <div class="upload-filename">
+      <span>{{ selectedPhotoName || 'Sélectionné la photo' }}</span>
+    </div>
+    <input type="file" #photoInput hidden (change)="onPhotoSelected($event)">
+  </div>
+</div>
+      <!-- Upload pièce -->
+      <div class="file-upload" style="flex: 1; ">
         <div class="upload-container">
-          <!-- Partie gauche : bouton bleu -->
-          <div class="upload-button" (click)="fileInput.click()">
+          <div class="upload-button bg-gradient-info" (click)="pieceInput.click()">
             <i class="material-symbols-rounded">upload_file</i>
-            <span>Choisir un fichier</span>
+            <span class="upload-text-mobile">Choisir une pièce</span>
           </div>
-  
-          <!-- Partie droite : affichage du fichier -->
           <div class="upload-filename">
-            {{ selectedFileName || 'Aucun fichier selectionner' }}
+            {{ selectedPieceName || 'Sélectionné la pièce' }}
           </div>
-  
-          <!-- Input type file caché -->
-          <input type="file" #fileInput hidden (change)="onFileSelected($event)">
+          <input type="file" #pieceInput hidden (change)="onPieceSelected($event)">
         </div>
       </div>
     </div>
-    
-        <!-- Boutons -->
-        <div class="form-actions"> <!-- Bouton Ajouter --> <button type="button" matTooltip="Ajouter un agent"
-            class="btn btn-primary" (click)="closeDialog()"> Annuler </button> <button type="button"
-            matTooltip="Ajouter un agent" class="btn bg-gradient-success"> Ajouter </button> </div>
-      </div>
 
+    <!-- Ligne 7 : Boutons -->
+    <div class="form-actions">
+      <button type="button" matTooltip="Annuler" class="btn btn-primary" (click)="closeDialog()">Annuler</button>
+      <button type="button" matTooltip="Ajouter" class="btn bg-gradient-dark">Enregistrer</button>
+    </div>
 
-
-
-
-
-
+  </div>
 </form>

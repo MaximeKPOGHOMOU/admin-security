@@ -5,59 +5,79 @@
     <!-- Partie gauche : Formulaire -->
     <div class="login-form">
 
-      <h2>Connexion</h2>
-      <p class="subtitle">Accédez à votre espace sécurisé</p>
-
+      <div class="zaly-container">
+        <a href="https://tonsite.com" class="zaly-tech" title="Aller sur le site Zaly Tech">
+          <img src="assets/img/logos/spi.png" alt="Zaly Tech">
+        </a>
+      </div>
       <form>
 
         <div class="form-group">
-
-
           <div class="input-icon">
             <span class="material-symbols-rounded">mail</span>
             <input type="email" placeholder="email@exemple.com">
           </div>
-
         </div>
 
-
         <div class="form-group">
-
-
           <div class="input-icon password-field">
-
             <span class="material-symbols-rounded">lock</span>
-
             <input [type]="showPassword ? 'text' : 'password'" placeholder="********">
-
             <span class="material-symbols-rounded eye-icon" (click)="togglePassword()">
               {{ showPassword ? 'visibility' : 'visibility_off' }}
             </span>
-
           </div>
-
         </div>
 
         <div class="login-options">
-
-         <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
-                    <label class="form-check-label mb-0 ms-3" for="rememberMe"> Se souvenir de moi</label>
-                  </div>
+          <div class="form-check form-switch d-flex align-items-center mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label mb-0 ms-3" for="rememberMe">
+              Se souvenir de moi
+            </label>
+          </div>
+          <a href="">Mot de passe oublié?</a>
         </div>
 
+        <!-- Bouton Se connecter -->
         <button class="login-btn">
           Se connecter
         </button>
+
+        <!-- Séparateur avec "ou" -->
+        <div class="separator">
+          <span>ou</span>
+        </div>
+
+        <!-- Bouton Continuer avec Google -->
+        <button type="button" class="google-btn">
+          <img src="assets/img/logos/goo.png" alt="Google logo" />
+          Continuer avec Google
+        </button>
+
+        <!-- Téléchargement de l'application -->
+        <div class="app-download">
+          <p>Téléchargez notre application :</p>
+          <div class="app-buttons">
+            <!-- App Store -->
+            <a href="#" class="app-store-btn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" />
+              <span>App Store</span>
+            </a>
+            <!-- Google Play -->
+            <a href="#" class="play-store-btn">
+              <img src="assets/img/logos/goog.png" alt="Google Play" />
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
 
       </form>
 
     </div>
 
-
     <!-- Partie droite : Image -->
     <div class="login-image">
-
       <div class="overlay">
         <h2>Bienvenue 👋</h2>
         <p>
@@ -65,8 +85,8 @@
           et contrôlez votre système en toute sécurité.
         </p>
       </div>
-
     </div>
+
 
   </div>
 

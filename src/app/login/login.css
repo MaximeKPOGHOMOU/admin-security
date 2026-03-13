@@ -34,11 +34,12 @@
 .subtitle{
   color:#777;
   margin-bottom:30px;
+
 }
 
 /* Champs */
 .form-group{
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 
 .form-group label{
@@ -61,6 +62,7 @@
   justify-content:space-between;
   font-size:13px;
   margin-bottom:20px;
+  margin-left: 5px;
 }
 
 /* Bouton */
@@ -113,6 +115,10 @@
   font-size:14px;
   line-height:1.6;
 }
+.google-btn img{
+  width: 20px;
+  height: 20px;
+}
 
 /* Responsive mobile */
 @media(max-width:768px){
@@ -122,10 +128,8 @@
   height:auto;
   width:90%;
 }
-
 .login-image{
-  height:200px;
-  width:100%;
+  display: none;
 }
 
 .login-form{
@@ -187,4 +191,144 @@
 
 .eye-icon:hover{
   color:#000;
+}
+
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px; /* espace entre Se connecter et Google */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0; /* espace vertical autour du séparateur */
+  font-size: 14px;
+  color: #999;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+/* Conteneur téléchargement */
+.app-download {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.app-download p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Conteneur boutons */
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Styles boutons App Store et Play */
+.app-buttons a {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f2f2f2;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.app-buttons a:hover {
+  background: #e0e0e0;
+}
+
+.app-buttons img {
+  height: 24px;
+  margin-right: 6px;
+}
+
+/* Hover */
+.google-btn:hover {
+  background: rgb(207, 204, 204);
+}
+
+.logo{
+  width: 700px;   /* diminue la taille */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px; /* centre + espace en bas */
+}
+
+/* conteneur centré */
+.zaly-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* bloc */
+.zaly-tech{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%; /* largeur fixe */
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+/* logo */
+.zaly-tech img{
+  width: 160px;
+  height: 50px;
+}
+
+/* hover */
+.zaly-tech:hover{
+  background: #d1cccc;
+  color: black;
 }
