@@ -345,8 +345,8 @@ mat-form-field {
 }
 
 .avatar-table{
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   border-radius:50%;
   object-fit:cover;
 }
@@ -376,17 +376,6 @@ mat-form-field {
   vertical-align: middle;
 }
 
-
-
-.page-link {
-  color: #0d6efd; /* bleu */
-}
-.page-item.active .page-link {
-  background-color: #0d6efd;
-  color: #fff;
-  border-radius: 50%;
-  border: none;
-}
   
 /* Limiter la hauteur de la table et activer le scroll */
 .table-responsive {
@@ -410,3 +399,39 @@ mat-form-field {
   background-color: rgba(0,0,0,0.2);
   border-radius: 3px;
 }
+.agent-table th,
+.agent-table td {
+  text-align: center !important; /* centre tout le contenu */
+  vertical-align: middle;
+}
+.agent-table thead th {
+  text-transform: uppercase; /* Force les lettres en majuscules */
+  font-weight: 600;          /* Optionnel : pour plus de visibilité */
+  color: #8392ab;            /* Couleur de ton choix */
+}
+
+
+.card-agent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+  .btn i {
+    font-size: 1.2rem; /* taille de l'icône */
+    vertical-align: middle;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+.page-link {
+  color: #0d6efd; /* bleu */
+}
+.page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+  
+
+

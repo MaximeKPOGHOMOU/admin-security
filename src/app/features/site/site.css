@@ -1,0 +1,367 @@
+/* Page login */
+.login-page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Roboto, sans-serif;
+}
+
+/* Card principale */
+.login-card{
+  width:400px;
+  height:500px;
+  background:white;
+  border-radius:12px;
+  display:flex;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+  border-top: 4px solid black;
+}
+
+/* Partie formulaire */
+.login-form{
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.login-form h2{
+  margin-bottom:5px;
+}
+
+.subtitle{
+  color:#777;
+  margin-bottom:30px;
+
+}
+
+/* Champs */
+.form-group{
+  margin-bottom:10px;
+}
+
+.form-group label{
+  font-size:14px;
+  margin-bottom:5px;
+  display:block;
+}
+
+.form-group input{
+  width:100%;
+
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* Options login */
+.login-options{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:20px;
+  margin-left: 5px;
+}
+
+/* Bouton */
+.login-btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  background:#2a5298;
+  color:white;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.login-btn:hover{
+  background:#1e3c72;
+}
+
+/* Overlay slogan */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+}
+
+.overlay h2{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.overlay p{
+  font-size:14px;
+  line-height:1.6;
+}
+.google-btn img{
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive mobile */
+@media(max-width:768px){
+
+.login-card{
+  flex-direction:column;
+  height:auto;
+  width:90%;
+}
+.login-image{
+  display: none;
+}
+
+.login-form{
+  width:100%;
+  padding:30px;
+}
+
+}
+.input-icon{
+  display:flex;
+  align-items:center;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:10px;
+  gap:10px;
+  background:#fff;
+}
+
+.input-icon span{
+  color:#777;
+  font-size:20px;
+}
+
+.input-icon input{
+  border:none;
+  outline:none;
+  width:100%;
+  font-size:14px;
+}
+
+.input-icon{
+  display:flex;
+  align-items:center;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:10px;
+  gap:10px;
+  background:#fff;
+}
+
+.input-icon input{
+  border:none;
+  outline:none;
+  flex:1;
+  font-size:14px;
+}
+
+/* icone gauche */
+.input-icon span{
+  color:#777;
+  font-size:20px;
+}
+
+/* icone oeil */
+.eye-icon{
+  cursor:pointer;
+  color:#666;
+}
+
+.eye-icon:hover{
+  color:#000;
+}
+
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px; /* espace entre Se connecter et Google */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+.zaly-container{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.zaly-container h2{
+  font-size:25px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.zaly-container p{
+  font-size:13px;
+  color:#777;
+  margin:0;
+}
+
+.register-link{
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+  color:#666;
+}
+
+.register-link a{
+  margin-left:5px;
+  color:#2a5298;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.register-link a:hover{
+  text-decoration:underline;
+}
+.site-card{
+   border-top: 4px solid black;
+     border-radius:12px;
+}
+/* Carte avec bordure supérieure colorée */
+.site-card {
+  border-top: 4px solid  #28a745; /* Couleur et épaisseur de ton choix */
+  border-radius: 0.5rem; /* Arrondi si tu veux */
+  overflow: hidden; /* Pour éviter que la bordure ne dépasse */
+  transition: transform 0.2s;
+}
+
+.site-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Optionnel : pour les cartes inactives, bordure rouge */
+.site-card.inactive {
+  border-top-color: #dc3545;
+}
+.subtitle{
+ margin:10px 20px;
+}
+
+.filter-btn{
+  padding:6px 14px;
+  font-size:0.75rem;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:500;
+  transition:all 0.2s ease;
+}
+
+/* état sélectionné */
+.filter-btn.active{
+  color:white;
+}
+
+/* couleurs */
+.dark{
+  background:#343a40;
+}
+
+.success{
+  background:#28a745;
+}
+
+.danger{
+  background:#dc3545;
+}
+
+/* bordures */
+.outline-dark{
+  border:1px solid #343a40;
+  color:#343a40;
+}
+
+.outline-success{
+  border:1px solid #28a745;
+  color:#28a745;
+}
+
+.outline-danger{
+  border:1px solid #dc3545;
+  color:#dc3545;
+}
+
+/* hover */
+.filter-btn:hover{
+  transform:translateY(-1px);
+}
+.icon-text{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:0.75rem;
+}
+
+.icon-text .material-symbols-rounded{
+  font-size:14px;
+}
+.border-end-soft{
+  border-right:1px solid rgba(0,0,0,0.1);
+}
+
+
+.filter-container {
+  position: sticky;      /* reste visible quand tu scrolles */
+  top: 10px;             /* distance du haut */
+  background: white;     /* pour que le fond soit opaque */
+  padding: 10px 0;       /* espace vertical */
+  z-index: 1000;         /* au-dessus des cartes */
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* séparation légère */
+}
+/* Cacher la bordure séparatrice dans la carte sur mobile */
+@media (max-width: 768px) {
+  .site-card .border-end-soft {
+    border-right: none !important;
+  }
+
+  /* Optionnel : centrer le contenu de la carte sur mobile */
+  .site-card .card-body {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .site-card .card-body .flex-grow-1 {
+    padding-left: 0 !important;
+    text-align: center;
+  }
+
+  .site-card .card-footer {
+    justify-content: center !important;
+  }
+      .filter-container {
+    justify-content: center !important;
+  }
+}

@@ -1,0 +1,23 @@
+
+.card-agent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+  .btn i {
+    font-size: 1.2rem; /* taille de l'icône */
+    vertical-align: middle;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+.page-link {
+  color: #0d6efd; /* bleu */
+}
+.page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+  

@@ -1,1 +1,153 @@
-<p>site works!</p>
+<div class="col-12">
+    <div class="header-row mb-2 d-flex flex-wrap align-items-center gap-1">
+        <!-- Titre -->
+        <h3 class="h4 mb-0 fw-bold flex-grow-1">Gestion des personnels</h3>
+
+        <!-- Champ de recherche avec section colorée fixe -->
+        <div class="input-group search-input" style="max-width: 250px;">
+            <!-- Zone de saisie -->
+            <input type="text" class="form-control" placeholder="Rechercher un agent..." style="padding: 8px 10px;">
+
+            <!-- Partie fixe à droite -->
+            <span class="input-group-text search-tag bg-gradient-info d-flex align-items-center">
+                <i class="material-symbols-rounded me-1"
+                    style="font-size: 1.2rem; padding: 5px 0; color: white; width: 10px; ">search</i>
+            </span>
+        </div>
+
+
+        <!-- Bouton Ajouter -->
+        <button type="button" matTooltip="Ajouter un agent"
+            style="margin-top: 15px; border-radius: 5px; width: 20px; align-items: center; padding-right: 32px;"
+            class="btn bg-gradient-dark">
+            <i class="material-symbols-rounded">add</i>
+        </button>
+    </div>
+    <div class="card my-1 ">
+        <!-- Card principale header -->
+        <div class=" card-header p-0 position-relative z-index-2">
+            <div class="bg-gradient-dark shadow-dark pt-3 pb-4 px-3 d-flex justify-content-between align-items-center">
+                <h6 class="text-white text-capitalize mb-0 fw-normal">Liste des sites</h6>
+            </div>
+        </div>
+        <!-- Résumé des statuts -->
+        <!-- Résumé des statuts -->
+        <div class="subtitle filter-container d-flex flex-wrap justify-content-start gap-3 mb-3">
+            <!-- TOTAL -->
+            <span class="filter-btn" [ngClass]="filterStatus() === 'ALL' ? 'active dark' : 'outline-dark'"
+                (click)="filterStatus.set('ALL')">
+                Total : {{ totalSites() }}
+            </span>
+
+            <!-- ACTIFS -->
+            <span class="filter-btn" [ngClass]="filterStatus() === 'ACTIF' ? 'active success' : 'outline-success'"
+                (click)="filterStatus.set('ACTIF')">
+                Actifs : {{ totalActif() }}
+            </span>
+
+            <!-- INACTIFS -->
+            <span class="filter-btn" [ngClass]="filterStatus() === 'INACTIF' ? 'active danger' : 'outline-danger'"
+                (click)="filterStatus.set('INACTIF')">
+                Inactifs : {{ totalInactif() }}
+            </span>
+        </div>
+
+        <!-- Card principale body avec petites cartes -->
+        <div class="card-body">
+            <div class="row g-4">
+                <!-- Petite card pour chaque site -->
+                <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let site of sitesFiltered()">
+                    <div class="card site-card h-100 shadow-sm" [ngClass]="{'inactive': site.status !== 'ACTIF'}">
+
+                        <div class="card-body  d-flex flex-column flex-md-row">
+
+                            <!-- Colonne gauche : QR code -->
+                            <div class="d-flex flex-column align-items-center justify-content-center p-3 border-end border-end-soft"
+                                style="min-width: 120px;">
+                                <div class="bg-light p-3 rounded mb-2 shadow-sm">
+                                    <span class="material-symbols-rounded"
+                                        style="font-size: 2rem; color:#2a5298;">qr_code</span>
+                                </div>
+                                <div class="card-footer d-flex justify-content-center">
+                                    <button matTooltip="Imprimer" class="btn-icon text-secondary">
+                                        <i class="material-symbols-rounded">print</i>
+                                    </button>
+                                    <!-- Footer petite card -->
+                                    <button matTooltip="Modifier" class="btn-icon text-success">
+                                        <i class="material-symbols-rounded">edit_square</i>
+                                    </button>
+                                    <button matTooltip="Afficher sur la carte" class="btn-icon" style="color: blue;">
+                                        <i class="material-symbols-rounded">location_on</i>
+                                    </button>
+                                    <button matTooltip="Bloquer" class="btn-icon " style="color: rgb(206, 24, 24);">
+                                        <i class="material-symbols-rounded">lock</i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- Colonne droite : infos -->
+                            <div class="flex-grow-1 ps-3 pt-2 pt-md-0">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold" style="font-size: 0.85rem;">{{ site.name }}</span>
+
+                                </div>
+
+                                <p class="mb-1 icon-text" style="font-size: 0.75rem; ">
+                                    <span class="material-symbols-rounded" style="font-size: 14px;">business</span> {{
+                                    site.clientName }}
+                                </p>
+                                <p class="mb-1 icon-text" style="font-size: 0.75rem;">
+                                    <span class="material-symbols-rounded" style="font-size: 14px;">place</span> {{
+                                    site.address }}
+                                </p>
+                                <p class="mb-1 icon-text" style="font-size: 0.75rem;">
+                                    <span class="material-symbols-rounded" style="font-size: 14px;">groups</span>
+                                    Nombre s'agent:
+                                    <span [ngStyle]="{'color': site.assignedAgents === 0 ? 'red' : '#28a745'}">
+                                        {{ site.assignedAgents }}
+                                    </span>
+                                </p>
+                                <p class="mb-1 icon-text" style="font-size: 0.75rem;">
+                                    <span class="material-symbols-rounded"
+                                        style="font-size: 14px;">radio_button_checked</span>
+                                    Rayon :
+                                    <span [ngStyle]="{'color': '#28a745' }">
+                                        {{ site.radius }} m
+                                    </span>
+                                </p>
+                                <p class="mb-1 icon-text" style="font-size: 0.75rem;">
+                                    <span class="material-symbols-rounded">
+                                        {{ site.securityLevel === 'FAIBLE' ? 'report_problem' :
+                                        site.securityLevel === 'MOYEN' ? 'warning' :
+                                        'check_circle' }}
+                                    </span>
+                                    <span [ngStyle]="{
+        'color': site.securityLevel === 'FAIBLE' ? 'green' :
+                 site.securityLevel === 'MOYEN' ? 'orange' :
+                 site.securityLevel === 'ÉLEVÉ' ? ' red' : 'inherit',
+        'font-weight': 'bold'
+      }">
+                                        {{ site.securityLevel }}
+                                    </span>
+                                </p>
+
+                                <!-- Statut -->
+                                <div class="mt-2">
+                                    <span class="badge bg-success" *ngIf="site.status=='ACTIF'"
+                                        style="font-size: 0.7rem;">Actif</span>
+                                    <span class="badge bg-danger" *ngIf="site.status!='ACTIF'"
+                                        style="font-size: 0.7rem;">Inactif</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

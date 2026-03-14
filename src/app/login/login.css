@@ -9,18 +9,18 @@
 
 /* Card principale */
 .login-card{
-  width:900px;
+  width:400px;
   height:500px;
   background:white;
   border-radius:12px;
   display:flex;
   overflow:hidden;
   box-shadow:0 10px 40px rgba(0,0,0,0.2);
+  border-top: 4px solid black;
 }
 
 /* Partie formulaire */
 .login-form{
-  width:50%;
   padding:50px;
   display:flex;
   flex-direction:column;
@@ -80,16 +80,6 @@
 
 .login-btn:hover{
   background:#1e3c72;
-}
-
-/* Partie image */
-.login-image{
-  width:50%;
-  background:url("https://images.unsplash.com/photo-1563986768609-322da13575f3") center/cover;
-  position:relative;
-
-  border-top-left-radius:12px;
-  border-bottom-left-radius:12px;
 }
 
 /* Overlay slogan */
@@ -242,93 +232,40 @@
 .separator::after {
   margin-left: 10px;
 }
-/* Conteneur téléchargement */
-.app-download {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-}
 
-.app-download p {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
 
-/* Conteneur boutons */
-.app-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
 
-/* Styles boutons App Store et Play */
-.app-buttons a {
-  display: flex;
-  align-items: center;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background: #f2f2f2;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.app-buttons a:hover {
-  background: #e0e0e0;
-}
-
-.app-buttons img {
-  height: 24px;
-  margin-right: 6px;
-}
-
-/* Hover */
-.google-btn:hover {
-  background: rgb(207, 204, 204);
-}
-
-.logo{
-  width: 700px;   /* diminue la taille */
-  height: auto;
-  display: block;
-  margin: 0 auto 20px; /* centre + espace en bas */
-}
-
-/* conteneur centré */
 .zaly-container{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  text-align:center;
+  margin-bottom:20px;
 }
 
-/* bloc */
-.zaly-tech{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%; /* largeur fixe */
-  padding: 8px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 14px;
-  background: transparent;
-  transition: all 0.3s ease;
+.zaly-container h2{
+  font-size:25px;
+  font-weight:600;
+  margin-bottom:5px;
 }
 
-/* logo */
-.zaly-tech img{
-  width: 160px;
-  height: 50px;
+.zaly-container p{
+  font-size:13px;
+  color:#777;
+  margin:0;
 }
 
-/* hover */
-.zaly-tech:hover{
-  background: #d1cccc;
-  color: black;
+.register-link{
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+  color:#666;
+}
+
+.register-link a{
+  margin-left:5px;
+  color:#2a5298;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.register-link a:hover{
+  text-decoration:underline;
 }

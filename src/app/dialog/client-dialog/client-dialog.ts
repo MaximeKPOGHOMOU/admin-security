@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-client-dialog',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './client-dialog.css',
 })
 export class ClientDialog {
+
+    constructor(private dialogRef: MatDialogRef<ClientDialog>) { }
+
+  closeDialog() {
+    this.dialogRef.close(); 
+  }
+
 
 }

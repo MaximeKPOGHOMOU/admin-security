@@ -12,110 +12,110 @@ import { CommonModule } from '@angular/common';
   styleUrl: './agent.css',
 })
 export class Agent {
-   @ViewChild('agentModal') agentModal!: TemplateRef<any>;
+  @ViewChild('agentModal') agentModal!: TemplateRef<any>;
   isEdit: boolean = false;
   selectedAgent?: Agent;
   showModal: boolean = false;
-  
-  constructor(private dialog: MatDialog) {}
+
+  constructor(private dialog: MatDialog) { }
 
   openAddAgentDialog() {
-  this.dialog.open(AgentDialog, {
-    width: '500px',
-    disableClose: true
-  });
-}
-agents = [
-{
-nom: "John Michael",
-service: "Organisation",
-poste: "Manager",
-telephone: "+33 6 45 12 78 90",
-statut: "En ligne",
-dateEmbauche: "23/04/2018",
-photo: "assets/img/team-1.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-},
-{
-nom: "Jane Doe",
-service: "IT",
-poste: "Développeuse",
-telephone: "+33 6 22 45 98 10",
-statut: "Hors ligne",
-dateEmbauche: "12/06/2020",
-photo: "assets/img/team-2.jpg"
-}
-];
+    this.dialog.open(AgentDialog, {
+      width: '500px',
+      disableClose: true
+    });
+  }
+  agents = [
+    {
+      nom: "John Michael",
+      service: "Organisation",
+      poste: "Manager",
+      telephone: "+33 6 45 12 78 90",
+      statut: "Actif",
+      dateEmbauche: "23/04/2018",
+      photo: "assets/img/team-1.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Actif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Inactif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Actif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Actif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Inactif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Actif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Inactif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Inactif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    },
+    {
+      nom: "Jane Doe",
+      service: "IT",
+      poste: "Développeuse",
+      telephone: "+33 6 22 45 98 10",
+      statut: "Actif",
+      dateEmbauche: "12/06/2020",
+      photo: "assets/img/team-2.jpg"
+    }
+  ];
 
 }

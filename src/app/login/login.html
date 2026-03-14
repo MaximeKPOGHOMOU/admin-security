@@ -6,16 +6,15 @@
     <div class="login-form">
 
       <div class="zaly-container">
-        <a href="https://tonsite.com" class="zaly-tech" title="Aller sur le site Zaly Tech">
-          <img src="assets/img/logos/spi.png" alt="Zaly Tech">
-        </a>
+        <h2>Authentifiez-vous</h2>
+        <p>Utilisez votre email et votre mot de passe. </p>
       </div>
       <form>
 
         <div class="form-group">
           <div class="input-icon">
             <span class="material-symbols-rounded">mail</span>
-            <input type="email" placeholder="email@exemple.com">
+            <input type="email" placeholder="exemple@gmail.com">
           </div>
         </div>
 
@@ -32,7 +31,7 @@
         <div class="login-options">
           <div class="form-check form-switch d-flex align-items-center mb-3">
             <input class="form-check-input" type="checkbox" id="rememberMe">
-            <label class="form-check-label mb-0 ms-3" for="rememberMe">
+            <label class="form-check-label mb-0 ms-2" for="rememberMe">
               Se souvenir de moi
             </label>
           </div>
@@ -41,7 +40,10 @@
 
         <!-- Bouton Se connecter -->
         <button class="login-btn">
-          Se connecter
+          Entrer
+          <span class="material-symbols-rounded" style="vertical-align: middle; margin-right: 5px;">
+             arrow_forward
+          </span>
         </button>
 
         <!-- Séparateur avec "ou" -->
@@ -55,38 +57,14 @@
           Continuer avec Google
         </button>
 
-        <!-- Téléchargement de l'application -->
-        <div class="app-download">
-          <p>Téléchargez notre application :</p>
-          <div class="app-buttons">
-            <!-- App Store -->
-            <a href="#" class="app-store-btn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" />
-              <span>App Store</span>
-            </a>
-            <!-- Google Play -->
-            <a href="#" class="play-store-btn">
-              <img src="assets/img/logos/goog.png" alt="Google Play" />
-              <span>Google Play</span>
-            </a>
-          </div>
+        <div class="register-link">
+          <span>Vous êtes nouveau ?</span>
+          <a [routerLink]="['/register']">Créer un compte.</a>
         </div>
 
       </form>
 
     </div>
-
-    <!-- Partie droite : Image -->
-    <div class="login-image">
-      <div class="overlay">
-        <h2>Bienvenue 👋</h2>
-        <p>
-          Gérez facilement vos collaborateurs, suivez vos activités
-          et contrôlez votre système en toute sécurité.
-        </p>
-      </div>
-    </div>
-
 
   </div>
 

@@ -1,1 +1,236 @@
-<p>register works!</p>
+<div class="login-page">
+
+    <div class="login-card">
+
+        <!-- Partie gauche : Formulaire -->
+        <div class="login-form" *ngIf="!showAgentForm && !showCompanyForm">
+
+            <div class="zaly-container">
+                <h2>Inscrivez-vous</h2>
+                <p>Choisir votre type de compte pour continuer. </p>
+            </div>
+            <div class="small-cards-container ">
+
+                <!-- Carte Agent -->
+                <div class="small-card">
+                    <form>
+                        <!-- Avatar et titre -->
+                        <div class="zaly-container">
+                            <img src="assets/img/agent.png" alt="Avatar Agent" class="avatar-large">
+                            <h3>Particulier</h3>
+                            <p>Trouver un emploi, Travailler de manière autonome</p>
+                        </div>
+
+                        <!-- Étapes clés -->
+                        <ul class="steps-list">
+                            <li> Créez votre profil</li>
+                            <li> Parcourir le portail d'emploi</li>
+                            <li> Postuler à des emplois</li>
+                            <li> Gérer votre travail</li>
+                        </ul>
+                        <button type="button" class="login-btn" (click)="openAgentForm()">S'inscrire</button>
+                    </form>
+                </div>
+
+                <!-- Carte Entreprise -->
+                <div class="small-card">
+                    <form>
+                        <!-- Avatar et titre -->
+                        <div class="zaly-container">
+                            <img src="assets/img/entreprise.png" alt="Avatar Agent" class="avatar-large">
+                            <h3>Entreprise</h3>
+                            <p>Postez des emplois, Embaucher des employés</p>
+                        </div>
+
+                        <!-- Étapes clés -->
+                        <ul class="steps-list">
+                            <li> Postez des emplois</li>
+                            <li> Gérer vos employés</li>
+                            <li> Gérer vos clients</li>
+                            <li> Gérer vos paie</li>
+                        </ul>
+                        <button type="button" class="login-btn" (click)="openCompanyForm()">S'inscrire</button>
+
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="register-link">
+                <span>Vous avez déjà un compte ?</span>
+                <a [routerLink]="['/login']">Connectez-vous.</a>
+            </div>
+
+        </div>
+
+
+        <!-- Formulaire Agent -->
+        <div class="login-form" *ngIf="showAgentForm">
+
+            <div class="zaly-container">
+                <h2>Créer votre compte agent</h2>
+                <p>Tous les champs marqué d'un * sont obligatoire. </p>
+            </div>
+            <form>
+
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span class="material-symbols-rounded">person</span>
+                        <input type="text" placeholder="Nom complet*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span class="material-symbols-rounded">phone</span>
+                        <input type="text" placeholder="Téléphone*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span class="material-symbols-rounded">mail</span>
+                        <input type="email" placeholder="exemple@gmail.com*">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon password-field">
+                        <span class="material-symbols-rounded">lock</span>
+                        <input [type]="showPassword ? 'text' : 'password'" placeholder="Mot de passe*">
+                        <span class="material-symbols-rounded eye-icon" (click)="togglePassword()">
+                            {{ showPassword ? 'visibility' : 'visibility_off' }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon password-field">
+                        <span class="material-symbols-rounded">lock</span>
+                        <input [type]="showPassword ? 'text' : 'password'" placeholder="Confirmation*">
+                        <span class="material-symbols-rounded eye-icon" (click)="togglePassword()">
+                            {{ showPassword ? 'visibility' : 'visibility_off' }}
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- Bouton Se connecter -->
+                <button type="submit" class="login-btn">
+                    Créer un compte
+                </button>
+
+                <div class="register-link">
+                    <a [routerLink]="['/register']" (click)="backToType($event)">
+                        <span class="material-symbols-rounded" style="vertical-align: middle; margin-right: 5px;">
+                            arrow_back
+                        </span>
+                        Retour au type de compte
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Formulaire Entreprise -->
+        <div class="login-form" *ngIf="showCompanyForm">
+
+            <div class="zaly-container">
+                <h2>Créer votre compte entreprise</h2>
+                <p>Tous les champs marqué d'un * sont obligatoire. </p>
+            </div>
+            <!-- Formulaire Entreprise : tout deux par ligne -->
+            <form>
+
+                <!-- Ligne 1 -->
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">person</span>
+                            <input type="text" placeholder="Nom de l'entreprise*">
+                        </div>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">phone</span>
+                            <input type="text" placeholder="Téléphone*">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ligne 2 -->
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">mail</span>
+                            <input type="email" placeholder="exemple@gmail.com*">
+                        </div>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">location_on</span>
+                            <input type="text" placeholder="Adresse 1*">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ligne 3 -->
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">map</span>
+                            <input type="text" placeholder="Région*">
+                        </div>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">location_city</span>
+                            <input type="text" placeholder="Ville*">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ligne 4 -->
+                <div class="form-row">
+                    <div class="form-group half-width password-field">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">lock</span>
+                            <input [type]="showPassword ? 'text' : 'password'" placeholder="Confirmation*">
+                            <span class="material-symbols-rounded eye-icon" (click)="togglePassword()">
+                                {{ showPassword ? 'visibility' : 'visibility_off' }}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group half-width password-field">
+                        <div class="input-icon">
+                            <span class="material-symbols-rounded">lock</span>
+                            <input [type]="showPassword ? 'text' : 'password'" placeholder="Mot de passe*">
+                            <span class="material-symbols-rounded eye-icon" (click)="togglePassword()">
+                                {{ showPassword ? 'visibility' : 'visibility_off' }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Bouton -->
+                <button type="submit" class="login-btn">Créer un compte</button>
+
+                <!-- Bouton Retour sans router -->
+                <div class="register-link">
+                    <a href="#" (click)="backToType($event)">
+                        <span class="material-symbols-rounded" style="vertical-align: middle; margin-right: 5px;">
+                            arrow_back
+                        </span>
+                        Retour au type de compte
+                    </a>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

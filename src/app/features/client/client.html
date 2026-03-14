@@ -1,1 +1,175 @@
-<p>client works!</p>
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="header-row mb-2 d-flex flex-wrap align-items-center gap-1">
+                <!-- Titre -->
+                <h3 class="h4 mb-0 fw-bold flex-grow-1">Gestion des clients</h3>
+
+                <!-- Champ de recherche avec section colorée fixe -->
+                <div class="input-group search-input" style="max-width: 250px;">
+                    <!-- Zone de saisie -->
+                    <input type="text" class="form-control" placeholder="Rechercher un client..."
+                        style="padding: 8px 10px;">
+
+                    <!-- Partie fixe à droite -->
+                    <span class="input-group-text search-tag bg-gradient-info d-flex align-items-center">
+                        <i class="material-symbols-rounded me-1"
+                            style="font-size: 1.2rem; padding: 5px 0; color: white; width: 10px; ">search</i>
+                    </span>
+                </div>
+
+
+                <!-- Bouton Ajouter -->
+                <button type="button" matTooltip="Ajouter un agent"
+                    style="margin-top: 15px; border-radius: 5px; width: 20px; align-items: center; padding-right: 32px;"
+                    class="btn bg-gradient-dark" (click)="openAddClientDialog()">
+                    <i class="material-symbols-rounded">add</i>
+                </button>
+            </div>
+            <div class="col-12">
+                <div class="card my-1">
+                    <div class="card-header p-0 position-relative z-index-2">
+                        <div
+                            class="bg-gradient-dark shadow-dark  pt-3 pb-4 px-3 d-flex justify-content-between align-items-center">
+                            <h6 class="text-white text-capitalize mb-0 fw-normal">
+                                Liste des clients
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="container py-4">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body p-0">
+
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0 agent-table">
+
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>N°</th>
+                                                <th>Client</th>
+                                                <th>Téléphone</th>
+                                                <th>Email</th>
+                                                <th>Adresse</th>
+                                                <th>Statut</th>
+                                                <th>Debut du contrat</th>
+                                                <th>Fin du contrat</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let agent of agents; let i = index">
+
+                                                <!-- Numéro -->
+                                                <td class="text-secondary">
+                                                    {{ i + 1 }}
+                                                </td>
+
+                                                <!-- Agent -->
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div>
+                                                            <div class="fw-semibold">
+                                                                {{ agent.nom }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <!-- Téléphone -->
+                                                <td>
+                                                    {{ agent.telephone }}
+                                                </td>
+                                                <td>
+                                                    {{ agent.email }}
+                                                </td>
+
+                                                <!-- Poste -->
+                                                <td>
+                                                    {{ agent.adresse }}
+                                                </td>
+
+                                                <!-- Statut -->
+                                                <td>
+                                                    <span [ngStyle]="{
+        'color': agent.statut === 'Actif' ? '#28a745' : '#dc3545',
+        'font-weight': 'bold'
+      }">
+                                                        {{ agent.statut }}
+                                                    </span>
+                                                </td>
+
+                                                <!-- Date -->
+                                                <td class="text-secondary text-xs">
+                                                    {{ agent.dateDebutContrat }}
+                                                </td>
+
+                                                <!-- Date -->
+                                                <td class="text-secondary text-xs">
+                                                    {{ agent.dateFinContrat }}
+                                                </td>
+
+                                                <!-- Actions -->
+                                                <td class="text-center">
+                                                    <button matTooltip="Modifier" class="btn-icon text-capitalize">
+                                                        <i class="material-symbols-rounded">edit_square</i>
+                                                    </button>
+
+                                                    <button matTooltip="Voir" class="btn-icon text-success">
+                                                        <i class="material-symbols-rounded">visibility</i>
+                                                    </button>
+
+                                                     <button matTooltip="Bloquer" class="btn-icon " style="color: rgb(206, 24, 24);">
+                            <i class="material-symbols-rounded">lock</i>
+                          </button>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Conteneur des cartes -->
+                    <div class="container py-4">
+                        <div class="row g-3">
+                            <!-- Tes cartes ici (comme tu as déjà) -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <!-- Pagination stylée avec icônes -->
+                        <nav aria-label="Page navigation example" class="mt-4">
+                            <ul class="pagination justify-content-center align-items-center gap-2">
+                                <!-- Bouton précédent -->
+                                <li class="page-item">
+                                    <a class="page-link d-flex align-items-center justify-content-center" href="#"
+                                        aria-label="Précédent" style="width: 40px; height: 40px; border-radius: 50%;">
+                                        <i class="material-symbols-rounded" style="font-size: 1.5rem;">chevron_left</i>
+                                    </a>
+                                </li>
+
+                                <!-- Numéros de page -->
+                                <li class="page-item  active"><a class="page-link bg-gradient-info" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+
+                                <!-- Bouton suivant -->
+                                <li class="page-item">
+                                    <a class="page-link d-flex align-items-center justify-content-center" href="#"
+                                        aria-label="Suivant" style="width: 40px; height: 40px; border-radius: 50%;">
+                                        <i class="material-symbols-rounded" style="font-size: 1.5rem;">chevron_right</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
